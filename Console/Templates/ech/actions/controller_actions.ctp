@@ -1,20 +1,6 @@
 <?php
 /**
  * Bake Template for Controller action generation.
- *
- * PHP 5
- *
- * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
- * Copyright 2005-2012, Cake Software Foundation, Inc. (http://cakefoundation.org)
- *
- * Licensed under The MIT License
- * Redistributions of files must retain the above copyright notice.
- *
- * @copyright     Copyright 2005-2012, Cake Software Foundation, Inc. (http://cakefoundation.org)
- * @link          http://cakephp.org CakePHP(tm) Project
- * @package       Cake.Console.Templates.default.actions
- * @since         CakePHP(tm) v 1.3
- * @license       MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
 ?>
 
@@ -41,6 +27,15 @@
 			throw new NotFoundException(__('Invalid <?php echo strtolower($singularHumanName); ?>'));
 		}
 		$this->set('<?php echo $singularName; ?>', $this-><?php echo $currentModelName; ?>->read(null, $id));
+	}
+
+/**
+ * <?php echo $admin ?>add method (uses <?php echo $admin ?>edit method)
+ *
+ * @return void
+ */
+	public function <?php echo $admin ?>add() {
+		$this->setAction('<?php echo $admin; ?>edit');
 	}
 
 <?php $compact = array(); ?>
