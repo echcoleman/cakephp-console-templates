@@ -7,8 +7,7 @@
 	<h2><?php echo "<?php echo __('{$pluralHumanName}'); ?>"; ?></h2>
 	<table cellpadding="0" cellspacing="0">
 	<tr>
-	<?php  foreach ($fields as $field): ?>
-		<?php if (in_array($field, array('id'))) continue; ?>
+	<?php foreach ($fields as $field): if (in_array($field, array('id'))) continue; ?>
 		<th><?php echo "<?php echo \$this->Paginator->sort('{$field}'); ?>"; ?></th>
 	<?php endforeach; ?>
 		<th class="actions"><?php echo "<?php echo __('Actions'); ?>"; ?></th>
